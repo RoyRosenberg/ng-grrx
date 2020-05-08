@@ -1,3 +1,6 @@
 <p>
-  products works!
+  products works! 
 </p>
+<div [innerHTML]="displayCode"></div>
+<input type="checkbox" [checked]="displayCode" (change)="checkChanges($event.target.checked)" />
+Dispaly Product Code
