@@ -23,7 +23,7 @@ import { productReducer } from './reducers/product.reducer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ product: productReducer }),
+    StoreModule.forRoot({ products: productReducer }),
     StoreDevtoolsModule.instrument({
       name: 'my ngrx example',
       maxAge: 25,

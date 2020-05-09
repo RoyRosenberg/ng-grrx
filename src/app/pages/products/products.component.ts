@@ -12,9 +12,8 @@ export class ProductsComponent implements OnInit {
   constructor(private store: Store<any>) { }
 
   ngOnInit() {
-    this.store.select('product').subscribe(x => {
-      // console.log(x);
-      this.displayCode = x ? x.showProductCode : this.displayCode;
+    this.store.select('products').subscribe(x => {
+      this.displayCode = x.showProductCode;
     });
   }
 
