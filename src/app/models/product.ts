@@ -3,5 +3,5 @@ export class Product {
     name: string;
     code: string;
     description: string;
-    rating: number;
+    starRating: number;
 }

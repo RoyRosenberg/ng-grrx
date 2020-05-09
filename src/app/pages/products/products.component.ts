@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.store.select('product').subscribe(x => {
-      console.log(x);
+      // console.log(x);
       this.displayCode = x ? x.showProductCode : this.displayCode;
     });
   }

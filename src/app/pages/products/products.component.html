@@ -1,6 +1,8 @@
-<p>
-  products works! 
-</p>
-<div [innerHTML]="displayCode"></div>
-<input type="checkbox" [checked]="displayCode" (change)="checkChanges($event.target.checked)" />
-Dispaly Product Code
+<div class="row my-2">
+  <div class="col col-3">
+    <app-product-list></app-product-list>
+    <div [innerHTML]="displayCode"></div>
+    <input type="checkbox" [checked]="displayCode" (change)="checkChanges($event.target.checked)" />
+    Dispaly Product Code
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="list-group">  
+  <a *ngFor="let prd of products" class="list-group-item list-group-item-action">
+    {{prd.name}}
+    <ng-template [ngIf]="showProductCode">({{prd.code}})</ng-template>
+  </a>  
+</div>
