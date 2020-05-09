@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models/product';
+import { getShowProductCode } from 'src/app/reducers/product.reducer';
 import { State } from 'src/app/state/app.state';
 import { ProductsService } from 'src/services/products.service';
 
@@ -16,9 +17,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.store.select('products').subscribe(prd => {
-      console.log('list:', prd);
-      this.showProductCode = prd.showProductCode;
+    this.store.select(getShowProductCode).subscribe(showProductCode => {
+      this.showProductCode = showProductCode;
     });
 
     this.prdService.getProducts().subscribe(list => {
