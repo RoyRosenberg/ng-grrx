@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getShowProductCode } from 'src/app/reducers/product.reducer';
+import * as ProductActions from 'src/app/state/product.actions';
 
 @Component({
   selector: 'app-products',
@@ -19,8 +20,7 @@ export class ProductsComponent implements OnInit {
   }
 
   checkChanges(checked) {
-    // console.log(checked);
-    this.store.dispatch({ type: 'TOGGLE_PRODUCT_CODE', payload: checked });
+    this.store.dispatch(new ProductActions.ToggleProductCode(checked));
   }
 
 }

@@ -1,6 +1,13 @@
-<div class="list-group">  
-  <a *ngFor="let prd of products" class="list-group-item list-group-item-action">
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+    Products
+    <span class="badge badge-primary badge-pill">{{products.length}}</span>
+  </li>
+  <li *ngFor="let prd of products" class="list-group-item d-flex justify-content-between align-items-center">
     {{prd.name}}
     <ng-template [ngIf]="showProductCode">({{prd.code}})</ng-template>
-  </a>  
-</div>
+  </li> 
+  <!-- <li class="list-group-item active">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li> -->
+</ul>
