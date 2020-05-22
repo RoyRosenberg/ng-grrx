@@ -13,11 +13,13 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { PostEffects } from './effects/post.effects';
+import { UserEffects } from './effects/user.effects';
 import { MenuComponent } from './pages/menu/menu.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { postsReducer } from './reducers/post.reducer';
 import { productReducer } from './reducers/product.reducer';
+import { userReducer } from './reducers/users.reducer';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,8 @@ import { productReducer } from './reducers/product.reducer';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ products: productReducer, posts: postsReducer }),
-    EffectsModule.forRoot([PostEffects]),
+    StoreModule.forRoot({ products: productReducer, posts: postsReducer, users: userReducer }),
+    EffectsModule.forRoot([PostEffects, UserEffects]),
     StoreDevtoolsModule.instrument({
       name: 'my ngrx example',
       maxAge: 25,
