@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getShowProductCode } from 'src/app/reducers/product.reducer';
+import { State } from 'src/app/state/app.state';
 import * as ProductActions from 'src/app/state/product.actions';
 
 @Component({
@@ -11,7 +12,7 @@ import * as ProductActions from 'src/app/state/product.actions';
 export class ProductsComponent implements OnInit {
   // productSubscription: Observable<any>;
   displayCode = false;
-  constructor(private store: Store<any>) { }
+  constructor(private store: Store<State>) { }
 
   ngOnInit() {
     this.store.select(getShowProductCode).subscribe(x => {
@@ -21,6 +22,10 @@ export class ProductsComponent implements OnInit {
 
   checkChanges(checked) {
     this.store.dispatch(new ProductActions.ToggleProductCode(checked));
+  }
+
+  newProduct(){
+    this.store.dispatch(new ProductActions.InitiateCurrentProduct());
   }
 
 }

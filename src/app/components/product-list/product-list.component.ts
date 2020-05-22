@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models/product';
 import { getShowProductCode } from 'src/app/reducers/product.reducer';
 import { State } from 'src/app/state/app.state';
+import * as ProductActions from 'src/app/state/product.actions';
 import { ProductsService } from 'src/services/products.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { ProductsService } from 'src/services/products.service';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
   showProductCode = false;
+  selectedProduct: Product;
   constructor(private prdService: ProductsService, private store: Store<State>) { }
 
   ngOnInit() {
@@ -25,6 +27,11 @@ export class ProductListComponent implements OnInit {
       this.products = list;
       console.log(list);
     });
+  }
+
+  selectProduct(prd: Product){
+    this.selectedProduct = prd;
+    this.store.dispatch(new ProductActions.SetCurrentProduct(prd));
   }
 
 }

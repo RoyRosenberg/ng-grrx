@@ -4,5 +4,10 @@
     <div [innerHTML]="displayCode"></div>
     <input type="checkbox" [checked]="displayCode" (change)="checkChanges($event.target.checked)" />
     Dispaly Product Code
+    <button (click)="newProduct()" class="btn btn-primary">New</button>
+  </div>
+  
+  <div class="col col-9">
+    <app-product-edit></app-product-edit>
   </div>
 </div>

@@ -1,0 +1,32 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formControl]="product">
+  <div class="card" *ngIf="selectedProduct">
+    <div class="card-header">
+      Product
+    </div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" ngModel [value]="selectedProduct.name" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label>Code</label>
+        <input type="text" class="form-control" name="code" ngModel value="{{selectedProduct.code}}" placeholder="Enter code">
+      </div>
+      <div class="form-group">
+        <label>Rating</label>
+        <input type="number" class="form-control" name="rating" ngModel value="{{selectedProduct.starRating}}"
+          placeholder="Enter star rating">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" rows="3" name="description" ngModel value={{selectedProduct.description}}></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <button type="submit" class="btn btn-primary">Save</button> &nbsp;
+      <button class="btn btn-secondary">Cancel</button> &nbsp;
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</form>

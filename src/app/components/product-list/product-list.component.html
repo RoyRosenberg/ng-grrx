@@ -3,7 +3,7 @@
     Products
     <span class="badge badge-primary badge-pill">{{products.length}}</span>
   </li>
-  <li *ngFor="let prd of products" class="list-group-item d-flex justify-content-between align-items-center">
+  <li *ngFor="let prd of products" (click)="selectProduct(prd)" [class.active]="prd == selectedProduct" class="list-group-item d-flex justify-content-between align-items-center">
     {{prd.name}}
     <ng-template [ngIf]="showProductCode">({{prd.code}})</ng-template>
   </li> 
