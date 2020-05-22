@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { PostsComponent } from './pages/posts/posts.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { productReducer } from './reducers/product.reducer';
 
@@ -20,7 +21,8 @@ import { productReducer } from './reducers/product.reducer';
     MenuComponent,
     ProductsComponent,
     ProductListComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
