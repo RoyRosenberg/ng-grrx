@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of posts">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.title}}</td>
+      <td>{{p.body}}</td>
+      <td>{{p.userId}}</td>
+    </tr>
+  </tbody>
+</table>
